@@ -5,7 +5,7 @@ import Ubuntu.Components 1.3
 MainView {
   id                  : root;
   objectName          : 'mainView';
-  applicationName     : 'emergency_chat.jaft';
+  applicationName     : 'emergencychat.jaft';
   automaticOrientation: true;
 
   width : units.gu(45);

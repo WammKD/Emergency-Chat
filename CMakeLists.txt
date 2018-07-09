@@ -1,4 +1,4 @@
-project(Emergency_Chat C CXX)
+project(EmergencyChat C CXX)
 cmake_minimum_required(VERSION 3.0.0)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -19,8 +19,8 @@ execute_process(
 
 set(QT_IMPORTS_DIR "lib/${ARCH_TRIPLET}")
 
-set(PROJECT_NAME "Emergency_Chat")
-set(FULL_PROJECT_NAME "emergency_chat.jaft")
+set(PROJECT_NAME "EmergencyChat")
+set(FULL_PROJECT_NAME "emergencychat.jaft")
 set(CMAKE_INSTALL_PREFIX /)
 set(DATA_DIR /)
 set(DESKTOP_FILE_NAME ${PROJECT_NAME}.desktop)

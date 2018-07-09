@@ -1,0 +1,15 @@
+{
+    "name": "emergency_chat.jaft",
+    "description": "An app. to assist in any situation where speech is impossible but communication is still necessary.",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Emergency Chat",
+    "hooks": {
+        "Emergency_Chat": {
+            "apparmor": "Emergency_Chat.apparmor",
+            "desktop":  "Emergency_Chat.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "Wamm K. D. <jaft.r@outlook.com>",
+    "framework" : "ubuntu-sdk-15.04.5"
+}

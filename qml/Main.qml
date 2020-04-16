@@ -16,6 +16,7 @@
 
 import QtQuick 2.7
 import Ubuntu.Components 1.3
+import Ubuntu.Components.ListItems 1.3 as ListItem
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
@@ -29,17 +30,70 @@ MainView {
   width : units.gu(45);
   height: units.gu(75);
 
-  Page {
-    anchors.fill: parent;
+  PageStack {
+    id            : pageStack;
+    anchors.fill  : parent;
+    anchors.bottom: parent.bottom;
 
-    header: PageHeader {
-              id   : header;
-              title: i18n.tr('Emergency Chat');
-            };
+    Component.onCompleted: push(page0);
 
-    Label {
-      anchors.centerIn: parent;
-      text            : i18n.tr('Hello World!');
+    Page {
+      id            : page0;
+      title         : i18n.tr("Root page");
+      visible       : false;
+      anchors.fill  : parent;
+      anchors.bottom: parent.bottom;
+
+      Column {
+        anchors.fill  : parent;
+        anchors.bottom: parent.bottom;
+
+        Row {
+          id            : lab;
+          width         : root.width;
+          anchors.fill  : parent;
+          anchors.bottom: butt.top;
+
+          Label {
+            text                    : i18n.tr('Hello World!');
+            anchors.centerIn        : parent;
+            anchors.horizontalCenter: parent.horizontalCenter;
+          }
+        }
+
+        Row {
+          id            : butt;
+          width         : root.width;
+          height        : units.gu(10);
+          anchors.bottom: parent.bottom;
+
+          Button {
+            text                    : "Chat";
+            width                   : parent.width * .8;
+            anchors.centerIn        : parent;
+            anchors.horizontalCenter: parent.horizontalCenter;
+            onClicked               : pageStack.push(page1,
+                                                     { color: UbuntuColors.orange });
+          }
+        }
+      }
+    }
+
+    Page {
+      title  : "Rectangle";
+      id     : page1;
+      visible: false;
+
+      property alias color: rectangle.color;
+
+      Rectangle {
+        id: rectangle;
+
+        anchors {
+          fill   : parent;
+          margins: units.gu(5);
+        }
+      }
     }
   }
 }

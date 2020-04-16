@@ -39,7 +39,18 @@ MainView {
 
     Page {
       id            : page0;
-      title         : i18n.tr("Root page");
+      header        : PageHeader {
+                        id   : header;
+                        title: i18n.tr("Root page");
+
+                        trailingActionBar {
+                          actions: [Action {
+                                      iconName   : "settings";
+                                      text       : "Settings";
+                                      onTriggered: pageStack.push(Qt.resolvedUrl("MyCustomPage.qml"));
+                                    }]
+                        }
+                      }
       visible       : false;
       anchors.fill  : parent;
       anchors.bottom: parent.bottom;

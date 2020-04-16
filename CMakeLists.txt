@@ -26,11 +26,16 @@ set(DATA_DIR /)
 set(DESKTOP_FILE_NAME ${PROJECT_NAME}.desktop)
 
 # This command figures out the target architecture for use in the manifest file
-execute_process(
-    COMMAND dpkg-architecture -qDEB_HOST_ARCH
-    OUTPUT_VARIABLE CLICK_ARCH
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-)
+# Either via the environment variable ARCH (set by Clickable) or dpkg
+if(DEFINED ENV{ARCH})
+    set(CLICK_ARCH "$ENV{ARCH}")
+else()
+    execute_process(
+        COMMAND dpkg-architecture -qDEB_HOST_ARCH
+        OUTPUT_VARIABLE CLICK_ARCH
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+endif()
 
 configure_file(manifest.json.in ${CMAKE_CURRENT_BINARY_DIR}/manifest.json)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifest.json DESTINATION ${CMAKE_INSTALL_PREFIX})

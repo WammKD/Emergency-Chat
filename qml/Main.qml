@@ -41,7 +41,7 @@ MainView {
       id            : page0;
       header        : PageHeader {
                         id   : header;
-                        title: i18n.tr("Root page");
+                        title: i18n.tr("Autistic Meltdown");
 
                         trailingActionBar {
                           actions: [Action {
@@ -66,7 +66,10 @@ MainView {
           anchors.bottom: butt.top;
 
           Label {
-            text                    : i18n.tr('Hello World!');
+            text                    : "I gave you my phone because I can't use or process speech right now but I am still capable of text communication.\n\nMy hearing and tactile senses are extremely sensitive in this state so please refrain from touching me. Please keep calm and proceed to the next screen that has a simple chat client through which we can communicate.";
+            width                   : parent.width * .9;
+            wrapMode                : Label.WordWrap;
+            textSize                : Label.Large;
             anchors.centerIn        : parent;
             anchors.horizontalCenter: parent.horizontalCenter;
           }

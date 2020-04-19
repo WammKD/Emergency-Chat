@@ -129,6 +129,22 @@ MainView {
           }
         }
 
+        Toolbar {
+          id    : tool;
+          height: bu.height;
+
+          anchors {
+            left        : parent.left;
+            right       : parent.right;
+            bottom      : parent.bottom;
+            leftMargin  : units.gu(1);
+            bottomMargin: Qt.inputMethod.keyboardRectangle.height + units.gu(1);
+          }
+
+          TextArea {
+            id   : bu;
+            width: parent.width - units.gu(5);
+          }
 
         }
       }

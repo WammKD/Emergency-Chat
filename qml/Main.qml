@@ -103,6 +103,17 @@ MainView {
         anchors.fill  : parent;
         anchors.bottom: parent.bottom;
 
+        ScrollView {
+          id    : rectangle;
+          width : root.width;
+
+          Column {
+            id     : col;
+            width  : rectangle.width;
+            padding: units.gu(1);
+            spacing: units.gu(1);
+          }
+        }
 
 
         }

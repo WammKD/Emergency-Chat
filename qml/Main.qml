@@ -96,6 +96,8 @@ MainView {
       id            : page1;
       title         : "Rectangle";
       visible       : false;
+      anchors.fill  : parent;
+      anchors.bottom: parent.bottom;
 
       property alias color: rectangle.color;
 

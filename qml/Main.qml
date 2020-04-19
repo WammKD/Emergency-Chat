@@ -99,7 +99,6 @@ MainView {
       anchors.fill  : parent;
       anchors.bottom: parent.bottom;
 
-      property alias color: rectangle.color;
 
       Rectangle {
         id: rectangle;

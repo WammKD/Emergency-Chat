@@ -86,8 +86,7 @@ MainView {
             width                   : parent.width * .8;
             anchors.centerIn        : parent;
             anchors.horizontalCenter: parent.horizontalCenter;
-            onClicked               : pageStack.push(page1,
-                                                     { color: UbuntuColors.orange });
+            onClicked               : pageStack.push(page1);
           }
         }
       }

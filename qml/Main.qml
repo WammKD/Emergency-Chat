@@ -99,13 +99,12 @@ MainView {
       anchors.fill  : parent;
       anchors.bottom: parent.bottom;
 
+      Column {
+        anchors.fill  : parent;
+        anchors.bottom: parent.bottom;
 
-      Rectangle {
-        id: rectangle;
 
-        anchors {
-          fill   : parent;
-          margins: units.gu(5);
+
         }
       }
     }

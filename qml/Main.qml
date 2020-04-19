@@ -93,9 +93,9 @@ MainView {
     }
 
     Page {
-      title  : "Rectangle";
-      id     : page1;
-      visible: false;
+      id            : page1;
+      title         : "Rectangle";
+      visible       : false;
 
       property alias color: rectangle.color;
 

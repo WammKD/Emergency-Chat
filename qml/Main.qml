@@ -115,6 +115,20 @@ MainView {
           }
         }
 
+        Row {
+          id            : swiRow;
+          width         : root.width;
+          height        : swi.height + units.gu(2);
+          anchors.bottom: tool.top;
+
+          Switch {
+            id                      : swi;
+            checked                 : false;
+            anchors.centerIn        : parent;
+            anchors.horizontalCenter: parent.horizontalCenter;
+          }
+        }
+
 
         }
       }

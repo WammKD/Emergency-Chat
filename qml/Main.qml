@@ -106,6 +106,15 @@ MainView {
         ScrollView {
           id    : rectangle;
           width : root.width;
+          height: root.height - units.gu(6)                             -
+                                swiRow.height - units.gu(1)             -
+                                tool.height                             -
+                                Qt.inputMethod.keyboardRectangle.height;
+
+          anchors {
+            bottom   : swiRow.top;
+            topMargin: units.gu(6);
+          }
 
           Column {
             id     : col;

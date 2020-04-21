@@ -269,7 +269,9 @@ MainView {
                                                                col,
                                                                "dynamicSnippet1");
 
-                                            swi.checked                      = !swi.checked;
+                                            if(auto_switch.checked) {
+                                              swi.checked                    = !swi.checked;
+                                            }
                                             bu.text                          = "";
                                             rectangle.flickableItem.contentY = rectangle.flickableItem.contentHeight;
                                           }

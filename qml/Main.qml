@@ -161,7 +161,7 @@ MainView {
                                           rectangle.forceActiveFocus();
 
                                           if(bu.text !== "") {
-                                            Qt.createQmlObject('import QtQuick 2.4;'           +
+                                            Qt.createQmlObject('import QtQuick 2.7;'           +
                                                                'import Ubuntu.Components 1.3;' +
 
                                                                'Row {'                                             +

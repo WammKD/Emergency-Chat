@@ -43,8 +43,8 @@ MainView {
     Page {
       id            : splash_page;
       header        : PageHeader {
-                        id   : header;
-                        title: i18n.tr("Autistic Meltdown");
+                        id   : splash_header;
+                        title: i18n.tr(DatabaseFunctions.getCurrentSplashTitle());
 
                         trailingActionBar {
                           actions: [Action {
@@ -69,7 +69,8 @@ MainView {
           anchors.bottom: butt.top;
 
           Label {
-            text                    : "I gave you my phone because I can't use or process speech right now but I am still capable of text communication.\n\nMy hearing and tactile senses are extremely sensitive in this state so please refrain from touching me. Please keep calm and proceed to the next screen that has a simple chat client through which we can communicate.";
+            id                      : splash_text;
+            text                    : DatabaseFunctions.getCurrentSplashBlurb();
             width                   : parent.width * .9;
             wrapMode                : Label.WordWrap;
             textSize                : Label.Large;

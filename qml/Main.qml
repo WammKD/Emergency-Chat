@@ -155,6 +155,53 @@ MainView {
             width: parent.width - units.gu(5);
           }
 
+          trailingActionBar.actions: [Action {
+                                        iconName   : "send";
+                                        onTriggered: {
+                                          rectangle.forceActiveFocus();
+
+                                          if(bu.text !== "") {
+                                            Qt.createQmlObject('import QtQuick 2.4;'           +
+                                                               'import Ubuntu.Components 1.3;' +
+
+                                                               'Row {'                                             +
+                                                               '  width          : rectangle.width - units.gu(2);' +
+                                                               '  layoutDirection: ' + (swi.checked      ?
+                                                                                        'Qt.RightToLeft' :
+                                                                                        'Qt.LeftToRight') + ';'    +
+
+                                                               '  Rectangle {'                                       +
+                                                               '    id           : rec;'                             +
+                                                               '    color        : ' + (swi.checked           ?
+                                                                                        'UbuntuColors.blue'   :
+                                                                                        'UbuntuColors.purple') + ';' +
+                                                               '    width        : labe.width  + units.gu(2);'       +
+                                                               '    height       : labe.height + units.gu(2);'       +
+                                                               '    radius       : 10;'                              +
+
+                                                               '    Label {'                                                         +
+                                                               '      id                      : labe;'                               +
+                                                               '      text                    : "' + bu.text.replace(/"/g,
+                                                                                                                     "\\\"") + '";'  +
+                                                               '      width                   : root.width * 0.333333;'              +
+                                                               '      color                   : ' + (swi.checked              ?
+                                                                                                     'UbuntuColors.jet'       :
+                                                                                                     'UbuntuColors.porcelain') + ';' +
+                                                               '      wrapMode                : Label.WordWrap;'                     +
+                                                               '      anchors.centerIn        : parent;'                             +
+                                                               '      anchors.horizontalCenter: parent.horizontalCenter;'            +
+                                                               '    }'                                                               +
+                                                               '  }'                                                                 +
+                                                               '}',
+                                                               col,
+                                                               "dynamicSnippet1");
+
+                                            swi.checked                      = !swi.checked;
+                                            bu.text                          = "";
+                                            rectangle.flickableItem.contentY = rectangle.flickableItem.contentHeight;
+                                          }
+                                        }
+                                      }]
         }
       }
     }

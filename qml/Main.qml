@@ -35,10 +35,10 @@ MainView {
     anchors.fill  : parent;
     anchors.bottom: parent.bottom;
 
-    Component.onCompleted: push(page0);
+    Component.onCompleted: push(splash_page);
 
     Page {
-      id            : page0;
+      id            : splash_page;
       header        : PageHeader {
                         id   : header;
                         title: i18n.tr("Autistic Meltdown");
@@ -86,15 +86,15 @@ MainView {
             width                   : parent.width * .8;
             anchors.centerIn        : parent;
             anchors.horizontalCenter: parent.horizontalCenter;
-            onClicked               : pageStack.push(page1);
+            onClicked               : pageStack.push(chat_page);
           }
         }
       }
     }
 
     Page {
-      id            : page1;
       title         : "Rectangle";
+      id            : chat_page;
       visible       : false;
       anchors.fill  : parent;
       anchors.bottom: parent.bottom;

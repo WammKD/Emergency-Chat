@@ -23,13 +23,15 @@ import Qt.labs.settings          1.0;
 import "databaseFunctions.js" as DatabaseFunctions;
 
 MainView {
-  id                  : root;
-  objectName          : 'mainView';
-  applicationName     : 'emergencychat.jaft';
-  automaticOrientation: true;
+  id                    : root;
+  objectName            : 'mainView';
+  applicationName       : 'emergencychat.jaft';
+  automaticOrientation  : true;
 
-  width : units.gu(45);
-  height: units.gu(75);
+  width                 : units.gu(45);
+  height                : units.gu(75);
+
+  property var  db      : DatabaseFunctions.openDB();
 
   PageStack {
     id            : pageStack;

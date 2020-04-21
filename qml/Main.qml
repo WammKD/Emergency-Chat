@@ -73,7 +73,7 @@ MainView {
             text                    : DatabaseFunctions.getCurrentSplashBlurb();
             width                   : parent.width * .9;
             wrapMode                : Label.WordWrap;
-            textSize                : Label.Large;
+            textSize                : DatabaseFunctions.getSettingsValue("splash");
             anchors.centerIn        : parent;
             anchors.horizontalCenter: parent.horizontalCenter;
           }

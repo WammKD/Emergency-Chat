@@ -93,8 +93,8 @@ MainView {
     }
 
     Page {
-      title         : "Rectangle";
       id            : chat_page;
+      title         : "Chat";
       visible       : false;
       anchors.fill  : parent;
       anchors.bottom: parent.bottom;

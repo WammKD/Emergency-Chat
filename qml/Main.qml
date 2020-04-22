@@ -50,7 +50,7 @@ MainView {
                           actions: [Action {
                                       iconName   : "settings";
                                       text       : "Settings";
-                                      onTriggered: pageStack.push(settings);
+                                      onTriggered: pageStack.push(settings_page);
                                     }]
                         }
                       }
@@ -97,7 +97,7 @@ MainView {
     }
 
     Page {
-      id          : settings;
+      id          : settings_page;
       visible     : false;
       anchors.fill: parent;
 

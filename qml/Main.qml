@@ -97,6 +97,28 @@ MainView {
     }
 
     Page {
+      id          : splashes_page;
+      header      : PageHeader {
+                      id   : splashes_header;
+                      title: i18n.tr('Blurbs');
+                    }
+      visible     : false;
+      anchors.fill: parent;
+
+      Column {
+        spacing: units.gu(2);
+
+        anchors {
+          top    : splashes_header.bottom;
+          left   : parent.left;
+          right  : parent.right;
+          bottom : parent.bottom;
+          margins: units.gu(2);
+        }
+      }
+    }
+
+    Page {
       id          : settings_page;
       visible     : false;
       anchors.fill: parent;

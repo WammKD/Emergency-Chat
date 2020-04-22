@@ -167,7 +167,10 @@ MainView {
 
     Page {
       id            : chat_page;
-      title         : "Chat";
+      header        : PageHeader {
+                        id   : chat_header;
+                        title: i18n.tr("Chat");
+                      }
       visible       : false;
       anchors.fill  : parent;
       anchors.bottom: parent.bottom;

@@ -87,6 +87,7 @@ MainView {
 
           Button {
             text                    : "Chat";
+            color                   : UbuntuColors.green;
             width                   : parent.width * .8;
             anchors.centerIn        : parent;
             anchors.horizontalCenter: parent.horizontalCenter;

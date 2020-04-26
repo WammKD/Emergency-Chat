@@ -79,6 +79,9 @@ Page {
                                                             1);
 
                         list_view.currentIndex = actualCurrentIndex;
+
+                        splash_header.title = i18n.tr(layout.title.text);
+                        splash_text.text    = layout.summary.text;
                       }
                     }
                     SlotsLayout.position: SlotsLayout.Leading;
@@ -133,6 +136,8 @@ Page {
 
                           layout.title.text   = splash_title.text;
                           layout.summary.text = splash_blurb.text;
+                          splash_header.title = i18n.tr(splash_title.text);
+                          splash_text.text    = splash_blurb.text;
 
                           PopupUtils.close(blurb_popup);
                         }

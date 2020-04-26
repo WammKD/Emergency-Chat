@@ -209,7 +209,7 @@ MainView {
                                                                col,
                                                                "dynamicSnippet1");
 
-                                            if(auto_switch.checked) {
+                                            if(DatabaseFunctions.getSettingsValue("switch") == 1) {
                                               swi.checked                    = !swi.checked;
                                             }
                                             bu.text                          = "";

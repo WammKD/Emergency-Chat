@@ -51,6 +51,11 @@ MainView {
                                       iconName   : "settings";
                                       text       : "Settings";
                                       onTriggered: pageStack.push(settings_page);
+                                    },
+                                    Action {
+                                      iconName   : "edit";
+                                      text       : "Edit Splash Screens";
+                                      onTriggered: pageStack.push(Qt.resolvedUrl("Splashes.qml"));
                                     }]
                         }
                       }
@@ -93,28 +98,6 @@ MainView {
             anchors.horizontalCenter: parent.horizontalCenter;
             onClicked               : pageStack.push(chat_page);
           }
-        }
-      }
-    }
-
-    Page {
-      id          : splashes_page;
-      header      : PageHeader {
-                      id   : splashes_header;
-                      title: i18n.tr('Blurbs');
-                    }
-      visible     : false;
-      anchors.fill: parent;
-
-      Column {
-        spacing: units.gu(2);
-
-        anchors {
-          top    : splashes_header.bottom;
-          left   : parent.left;
-          right  : parent.right;
-          bottom : parent.bottom;
-          margins: units.gu(2);
         }
       }
     }

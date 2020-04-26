@@ -63,11 +63,11 @@ MainView {
       anchors.fill  : parent;
       anchors.bottom: parent.bottom;
 
-      Column {
+      Item {
         anchors.fill  : parent;
         anchors.bottom: parent.bottom;
 
-        Row {
+        Item {
           id            : lab;
           width         : root.width;
           anchors.fill  : parent;
@@ -84,7 +84,7 @@ MainView {
           }
         }
 
-        Row {
+        Item {
           id            : butt;
           width         : root.width;
           height        : units.gu(10);
@@ -181,7 +181,7 @@ MainView {
       anchors.fill  : parent;
       anchors.bottom: parent.bottom;
 
-      Column {
+      Item {
         anchors.fill  : parent;
         anchors.bottom: parent.bottom;
 
@@ -206,7 +206,7 @@ MainView {
           }
         }
 
-        Row {
+        Item {
           id            : swiRow;
           width         : root.width;
           height        : swi.height + units.gu(2);

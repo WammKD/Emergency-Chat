@@ -143,11 +143,10 @@ Page {
               }
 
     anchors {
-      top    : splashes_header.bottom;
-      left   : parent.left;
-      right  : parent.right;
-      bottom : parent.bottom;
-      /* margins: units.gu(2); */
+      top   : splashes_header.bottom;
+      left  : parent.left;
+      right : parent.right;
+      bottom: parent.bottom;
     }
   }
 

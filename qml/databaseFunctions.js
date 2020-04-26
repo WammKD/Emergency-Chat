@@ -112,6 +112,10 @@ function getCurrentSplashValue(valueName) {
   return r;
 }
 
+function getCurrentSplashID() {
+  return getCurrentSplashValue('id');
+}
+
 function getCurrentSplashTitle() {
   return getCurrentSplashValue('title');
 }
@@ -133,4 +137,47 @@ function getSplashes() {
   }
 
   return r;
+}
+
+function insertSplash(title, blurb) {
+  try {
+    db.transaction(function(tx) {
+                     tx.executeSql('INSERT INTO splashes VALUES(?, ?, ?, ?);',
+																	 [null, 0, title, blurb]);
+                   });
+  } catch(err) {
+    print("Error inserting value in database.")
+    print('Command sent was: INSERT INTO splashes ' +
+					'VALUES(null, 0, ' + title + ', ' + blurb + ');');
+    print(err);
+  }
+}
+
+function updateSplashValue(id, col, value) {
+  try {
+    db.transaction(function(tx) {
+                     tx.executeSql('UPDATE splashes '     +
+                                   'SET   ' + col + '=? ' +
+																	 'WHERE  id=?;',         [value, id]);
+                   });
+  } catch(err) {
+    print("Error updating value in database.")
+    print('Command sent was: UPDATE splashes SET ' +
+          col + '=\'' + value + '\' '              +
+					'id=' + id + ';');
+    print(err);
+  }
+}
+
+function deleteSplash(id) {
+  try {
+    db.transaction(function(tx) {
+                     tx.executeSql('DELETE FROM splashes WHERE id=?;', [id]);
+                   });
+  } catch(err) {
+    print("Error deleting value in database.")
+    print('Command sent was: DELETE FROM splashes ' +
+					'WHERE id=' + id + ';');
+    print(err);
+  }
 }

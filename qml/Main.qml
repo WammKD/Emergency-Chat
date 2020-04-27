@@ -66,6 +66,11 @@ MainView {
                                       iconName   : "edit";
                                       text       : "Edit Splash Screens";
                                       onTriggered: pageStack.push(Qt.resolvedUrl("Splashes.qml"));
+                                    },
+                                    Action {
+                                      iconName   : "info";
+                                      text       : "Info.";
+                                      onTriggered: pageStack.push(Qt.resolvedUrl("Info.qml"));
                                     }]
                         }
                       }

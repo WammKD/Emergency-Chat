@@ -33,12 +33,22 @@ MainView {
 
   property var  db      : DatabaseFunctions.openDB();
 
+  function setTheme() {
+    Theme.name = { 0: "",
+                   1: "Ubuntu.Components.Themes.Ambiance",
+                   2: "Ubuntu.Components.Themes.SuruDark" }[DatabaseFunctions.getSettingsValue("theme")];
+  }
+
   PageStack {
     id            : pageStack;
     anchors.fill  : parent;
     anchors.bottom: parent.bottom;
 
-    Component.onCompleted: push(splash_page);
+    Component.onCompleted: {
+      setTheme();
+
+      push(splash_page);
+    }
 
     Page {
       id            : splash_page;

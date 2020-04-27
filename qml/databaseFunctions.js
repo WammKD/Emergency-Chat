@@ -13,7 +13,8 @@ function openDB(tableName) {
     dB.transaction(function(tx) {
                      tx.executeSql('CREATE TABLE IF NOT EXISTS '        +
                                    'settings(splash INTEGER NOT NULL, ' +
-                                            'switch BOOLEAN NOT NULL);');
+                                            'switch BOOLEAN NOT NULL, ' +
+                                            'theme  INTEGER NOT NULL);');
                      tx.executeSql('CREATE TABLE IF NOT EXISTS '                                       +
                                    'splashes(id         INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 1, ' +
                                             'is_current BOOLEAN NOT NULL, '                            +
@@ -22,8 +23,8 @@ function openDB(tableName) {
 
                      if(tx.executeSql("SELECT * "        +
                                       "FROM   settings;").rows.length == 0) {
-                       tx.executeSql('INSERT INTO settings VALUES(?, ?);',
-                                     [4, 1]);
+                       tx.executeSql('INSERT INTO settings VALUES(?, ?, ?);',
+                                     [4, 1, 0]);
 
                        print('Settings table seeded.');
                      }

@@ -51,7 +51,7 @@ Page {
 
       Label {
         id                      : name;
-        text                    : "Emergency Chat  v1.0";
+        text                    : "Emergency Chat  v1.1.0";
         textSize                : Label.XLarge;
         horizontalAlignment     : Text.AlignHCenter;
         anchors.horizontalCenter: parent.horizontalCenter;

@@ -68,5 +68,28 @@ Page {
         }
       }
     }
+
+    Column {
+      width  : parent.width;
+      spacing: units.gu(1);
+
+      Label {
+        text     : i18n.tr('Theme');
+        font.bold: true;
+      }
+
+      OptionSelector {
+        id                    : app_theme;
+        width                 : parent.width;
+        model                 : ["System Theme", "Ambiance", "Suru Dark"];
+        selectedIndex         : DatabaseFunctions.getSettingsValue("theme");
+        onSelectedIndexChanged: {
+          DatabaseFunctions.updateSettingsValue("theme",
+                                                app_theme.selectedIndex);
+
+          setTheme();
+        }
+      }
+    }
   }
 }

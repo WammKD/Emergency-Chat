@@ -106,7 +106,7 @@ MainView {
           anchors.bottom: parent.bottom;
 
           Button {
-            text                    : "Chat";
+            text                    : i18n.tr("Chat");
             color                   : UbuntuColors.green;
             width                   : parent.width * .8;
             anchors.centerIn        : parent;

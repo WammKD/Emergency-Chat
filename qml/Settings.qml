@@ -35,8 +35,11 @@ Page {
       OptionSelector {
         id                    : splash_font_size;
         width                 : parent.width;
-        model                 : ["Extra, Extra Small", "Extra Small",
-                                 "Small",              "Medium",      "Large"];
+        model                 : [i18n.tr("Extra, Extra Small"),
+                                 i18n.tr("Extra Small"),
+                                 i18n.tr("Small"),
+                                 i18n.tr("Medium"),
+                                 i18n.tr("Large")];
         selectedIndex         : DatabaseFunctions.getSettingsValue("splash");
         onSelectedIndexChanged: {
           splash_text.textSize = splash_font_size.selectedIndex;
@@ -81,7 +84,9 @@ Page {
       OptionSelector {
         id                    : app_theme;
         width                 : parent.width;
-        model                 : ["System Theme", "Ambiance", "Suru Dark"];
+        model                 : [i18n.tr("System Theme"),
+                                 i18n.tr("Ambiance"),
+                                 i18n.tr("Suru Dark")];
         selectedIndex         : DatabaseFunctions.getSettingsValue("theme");
         onSelectedIndexChanged: {
           DatabaseFunctions.updateSettingsValue("theme",

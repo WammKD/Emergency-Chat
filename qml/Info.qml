@@ -85,7 +85,7 @@ Page {
           title.text: i18n.tr("License");
 
           Label {
-            text: "GNU General Public License v3";
+            text: i18n.tr("GNU General Public License v3");
           }
 
           ProgressionSlot {

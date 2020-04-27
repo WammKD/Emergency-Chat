@@ -117,13 +117,13 @@ Page {
                       spacing: units.gu(2);
 
                       Button {
-                        text     : "Cancel";
+                        text     : i18n.tr("Cancel");
                         width    : parent.width / 2 - units.gu(1);
                         onClicked: PopupUtils.close(blurb_popup);
                       }
 
                       Button {
-                        text     : "Save";
+                        text     : i18n.tr("Save");
                         color    : UbuntuColors.green;
                         width    : parent.width / 2 - units.gu(1);
                         onClicked: {
@@ -176,13 +176,13 @@ Page {
         spacing: units.gu(2);
 
         Button {
-          text     : "Cancel";
+          text     : i18n.tr("Cancel");
           width    : parent.width / 2 - units.gu(1);
           onClicked: PopupUtils.close(blurb_add_popup);
         }
 
         Button {
-          text     : "Save";
+          text     : i18n.tr("Save");
           color    : UbuntuColors.green;
           width    : parent.width / 2 - units.gu(1);
           onClicked: {
